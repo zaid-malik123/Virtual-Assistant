@@ -1,0 +1,75 @@
+# =========================
+# General
+# =========================
+node_modules/
+.env
+.env.local
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vscode/
+dist/
+build/
+coverage/
+
+# =========================
+# Backend (Node.js + Express)
+# =========================
+backend/node_modules/
+backend/.env
+backend/.env.local
+backend/dist/
+backend/build/
+backend/coverage/
+backend/logs/
+backend/uploads/
+backend/tmp/
+backend/.cache/
+
+# =========================
+# Frontend (React + Vite)
+# =========================
+frontend/node_modules/
+frontend/.env
+frontend/.env.local
+frontend/dist/
+frontend/build/
+frontend/coverage/
+frontend/.vite/
+frontend/.cache/
+
+# =========================
+# OS & Editor junk
+# =========================
+*.log
+*.pid
+*.seed
+*.pid.lock
+*.bak
+*.swp
+*.tmp
+*.temp
+*.orig
+*.old
+.idea/
+*.iml
+
+# =========================
+# Cloudinary / Upload folders
+# =========================
+uploads/
+public/uploads/
+frontend/public/uploads/
+backend/public/uploads/
+
+# =========================
+# Render / Deployment
+# =========================
+render.yaml
+.vercel/
+.netlify/
+.env.production
+.env.development
