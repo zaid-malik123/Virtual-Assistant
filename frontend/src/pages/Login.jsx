@@ -4,8 +4,11 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { serverUrl } from "../App";
+import { useContext } from "react";
+import { UserData } from "../context/UserContext";
 
 const Login = () => {
+  const { setUser, user } = useContext(UserData);
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -37,7 +40,7 @@ const Login = () => {
         { email, password },
         { withCredentials: true }
       );
-      console.log(res.data);
+      setUser(res.data)
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
         setError(error.response.data.message);
