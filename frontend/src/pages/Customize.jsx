@@ -11,6 +11,7 @@ import { useState } from "react";
 import { useRef } from "react";
 import { useContext } from "react";
 import { UserData } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Customize = () => {
   const {
@@ -22,7 +23,7 @@ const Customize = () => {
     setSelectedImage,
   } = useContext(UserData);
   const inputImage = useRef(null);
-
+  const navigate = useNavigate()
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setBackendImage(file);
@@ -72,7 +73,7 @@ const Customize = () => {
         />
       </div>
       {selectedImage && (
-        <button className="w-[150px] h-[60px] bg-white mt-[30px] text-black rounded-full text-[20px] font-semibold">
+        <button onClick={()=> navigate("/customize2")} className="w-[150px] h-[60px] bg-white mt-[30px] text-black rounded-full text-[20px] font-semibold">
           Next
         </button>
       )}
