@@ -6,7 +6,10 @@ export const UserData = createContext();
 
 const UserContext = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // <-- added
+  const [loading, setLoading] = useState(true);
+  const [frontendImage, setFrontendImage] = useState(null);
+  const [backendImage, setBackendImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleCurrentUser = async () => {
     try {
@@ -29,11 +32,15 @@ const UserContext = ({ children }) => {
     user,
     setUser,
     loading, // <-- pass this too
+    frontendImage,
+    setFrontendImage,
+    backendImage,
+    setBackendImage,
+    selectedImage,
+    setSelectedImage,
   };
 
-  return (
-    <UserData.Provider value={value}>{children}</UserData.Provider>
-  );
+  return <UserData.Provider value={value}>{children}</UserData.Provider>;
 };
 
 export default UserContext;

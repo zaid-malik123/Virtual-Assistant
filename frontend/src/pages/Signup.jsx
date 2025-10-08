@@ -46,6 +46,7 @@ const Signup = () => {
         { withCredentials: true }
       );
       setUser(res.data)
+      navigate("/customize")
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
         setError(error.response.data.message);
