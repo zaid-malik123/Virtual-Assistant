@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.get("/currUser", isAuth,getCurrentUser)
 
-router.post("/updateAssistant",upload.single("image") ,isAuth, updateAssistant )
+router.post("/updateAssistant",upload.single("assistantImage") ,isAuth, updateAssistant )
 
 export default router;
